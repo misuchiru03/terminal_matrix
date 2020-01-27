@@ -1,0 +1,33 @@
+--- matrix.py
++++ matrix.py
+@@ -6,7 +6,7 @@
+ 
+ MAX_CASCADES = 600
+ MAX_COLS = 20
+-FRAME_DELAY = 0.03
++FRAME_DELAY = 0.02
+ 
+ MAX_SPEED  = 5
+ 
+@@ -19,12 +19,16 @@
+ 
+ black, green, white = "30", "32", "37"
+ 
+-latin = getchars(0x30, 0x80)
+-greek = getchars(0x390, 0x3d0)
+-hebrew = getchars(0x5d0, 0x5eb)
+-cyrillic = getchars(0x400, 0x50)
++latinupper = getchars(0x41, 0x5A)
++latinlower = getchars(0x61, 0x7A)
++katakana = getchars(0xFF66, 0xFF9D)
++
++#greek = getchars(0x390, 0x3d0)
++#hebrew = getchars(0x5d0, 0x5eb)
++#cyrillic = getchars(0x400, 0x50)
+ 
+-chars= latin + greek + hebrew + cyrillic
++#chars= latin + greek + hebrew + cyrillic
++chars= latinupper + latinlower + katakana
+ 
+ def pareto(limit):
+     scale = lines // 2
